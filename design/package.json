@@ -1,0 +1,14 @@
+{
+  "name": "design",
+  "version": "1.0.0",
+  "description": "design documents",
+  "main": "index.js",
+  "scripts": {
+    "build": "npx @redocly/cli build-docs sample-open-api.yaml --output dist/sample-open-api.html"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@redocly/cli": "^1.1.0"
+  }
+}

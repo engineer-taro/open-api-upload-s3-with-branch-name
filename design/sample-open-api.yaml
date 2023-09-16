@@ -1,0 +1,46 @@
+openapi: 3.0.0
+info:
+  version: 1.0.0
+  title: Sample API
+  description: A sample API to illustrate OpenAPI concepts
+tags:
+  - name: users
+    description: User API
+paths:
+  /users/{id}:
+    get:
+      tags:
+        - users
+      description: User情報を取得する
+      parameters:
+        - name: id
+          in: path
+          description: User ID
+          required: true
+          schema:
+            type: string
+            example: 80eee574-d798-a7b7-2292-855fa19e8fc5
+      responses:
+        "200":
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/User"
+components:
+  schemas:
+    User:
+      type: object
+      properties:
+        id:
+          type: string
+          description: User ID
+          example: 80eee574-d798-a7b7-2292-855fa19e8fc5
+        name:
+          type: string
+          description: User name
+          example: John Doe
+        email:
+          type: string
+          description: User email
+          example: john.doe@example.mail.jp
