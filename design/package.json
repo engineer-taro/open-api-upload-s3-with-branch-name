@@ -4,7 +4,7 @@
   "description": "design documents",
   "main": "index.js",
   "scripts": {
-    "build": "npx @redocly/cli build-docs sample-open-api.yaml --output dist/sample-open-api.html"
+    "build": "npx @redocly/cli build-docs sample-open-api.yaml --output dist/index.html"
   },
   "author": "",
   "license": "ISC",

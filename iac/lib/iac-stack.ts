@@ -11,6 +11,13 @@ export class IacStack extends cdk.Stack {
       bucketProps: {
         removalPolicy: cdk.RemovalPolicy.DESTROY,
       },
+      cloudFrontDistributionProps: {
+        cachePolicy: {
+          defaultTtl: cdk.Duration.seconds(0),
+        },
+      },
+      // NOTE: redocから生成されるhtmlが cdnのscript, inline style を使っており、セキュリティヘッダを付与していると弾かれてしまうため無効化
+      insertHttpSecurityHeaders: false,
     });
   }
 }
