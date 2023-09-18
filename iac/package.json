@@ -8,6 +8,7 @@
     "build": "tsc",
     "watch": "tsc -w",
     "test": "jest",
+    "test:update": "jest --updateSnapshot",
     "cdk": "cdk"
   },
   "devDependencies": {
@@ -20,6 +21,7 @@
     "typescript": "~5.2.2"
   },
   "dependencies": {
+    "@aws-solutions-constructs/aws-cloudfront-s3": "^2.44.0",
     "aws-cdk-lib": "^2.94.0",
     "constructs": "^10.2.70",
     "source-map-support": "^0.5.21"
