@@ -25,6 +25,7 @@ export class FrontStack extends cdk.Stack {
       insertHttpSecurityHeaders: false,
     });
 
+    // NOTE: regionにつき1つのみ作成可能
     const openIdConnectProvider = new aws_iam.OpenIdConnectProvider(
       this,
       "OpenIdConnectProvider",
