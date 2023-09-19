@@ -11,3 +11,6 @@ branch ごとに S3 の別ディレクトリに対して html の OpenAPI 定義
 
 - GitHub Actions からのデプロイ
 - ブランチ名をディレクトリ名にする
+
+- Branch 名を GitHub Actions で撮ってくる
+- Branch 名のエスケープを行う
