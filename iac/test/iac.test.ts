@@ -1,10 +1,12 @@
 import * as cdk from "aws-cdk-lib";
 import { Template } from "aws-cdk-lib/assertions";
-import * as Iac from "../lib/iac-stack";
+import { FrontStack } from "../lib/front-stack";
 
 test("Snap shot testing", () => {
   const app = new cdk.App();
-  const stack = new Iac.IacStack(app, "MyTestStack");
+  const stack = new FrontStack(app, "MyTestStack", {
+    gitHubOrg: "sample",
+  });
   const template = Template.fromStack(stack);
 
   expect(template.toJSON()).toMatchSnapshot();
