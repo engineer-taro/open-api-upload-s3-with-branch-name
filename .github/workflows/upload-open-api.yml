@@ -15,6 +15,8 @@ jobs:
           node-version: "14"
       - name: Install dependencies
         run: npm install
+      - run: npx npx @redocly/cli --help
+      - run: npx npx @redocly/cli build-docs sample-open-api.yaml --output dist/index.html
       - name: Build Open API
         run: npm run build
       - name: Configure AWS Credentials
