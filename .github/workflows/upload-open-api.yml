@@ -4,6 +4,8 @@ on:
   pull_request_target:
     branches:
       - main
+    paths:
+      - "design/**"
 
 jobs:
   upload-open-api-to-s3:
