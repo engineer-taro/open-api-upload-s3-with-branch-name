@@ -5,13 +5,18 @@ on:
 jobs:
   upload-open-api-to-s3:
     runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: ./design
     steps:
       - uses: actions/checkout@v2
       - uses: actions/setup-node@v2
         with:
           node-version: "14"
-      - run: cd design
-      - run: npm install
+      - name: Install dependencies
+        run: |
+          cd ..
+          npm install
       - run: npm run build
       - name: Configure AWS Credentials
         uses: aws-actions/configure-aws-credentials@v4
