@@ -16,7 +16,7 @@ jobs:
         uses: aws-actions/configure-aws-credentials@v4
         with:
           role-to-assume: arn:aws:iam::${{ secrets.AWS_ACCOUNT_ID }}:role/${{ secrets.AWS_ROLE_NAME }}
-          aws-region: "${{ var.AWS_REGION }}}}"
+          aws-region: "${{ vars.AWS_REGION }}}}"
       - name: Upload Open API to S3
         run: |
           aws s3 cp ./dist/index.html s3://${{ secrets.S3_BUCKET_NAME }}/index.html
