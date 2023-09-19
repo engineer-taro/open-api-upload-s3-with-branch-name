@@ -42,7 +42,7 @@ export class FrontStack extends cdk.Stack {
           openIdConnectProvider.openIdConnectProviderArn,
           {
             StringLike: {
-              "token.actions.githubusercontent.com:sub": `${props.gitHubOrg}/*`,
+              "token.actions.githubusercontent.com:sub": `repo:${props.gitHubOrg}/*`,
             },
           },
           "sts:AssumeRoleWithWebIdentity"
