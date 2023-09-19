@@ -43,7 +43,7 @@ components:
         email:
           type: string
           description: User email
-          example: john.doe@example.mail.jp
+          example: john.doe@example.email.jp
         age:
           type: number
           description: User age
