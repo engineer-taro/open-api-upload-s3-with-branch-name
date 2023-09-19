@@ -13,4 +13,6 @@ branch ごとに S3 の別ディレクトリに対して html の OpenAPI 定義
 - ブランチ名をディレクトリ名にする
 
 - Branch 名を GitHub Actions で撮ってくる
-- Branch 名のエスケープを行う
+- Branch 名のエスケープを行う # マストではない
+
+- design 配下に差分がある時のみワークフローを実行する
