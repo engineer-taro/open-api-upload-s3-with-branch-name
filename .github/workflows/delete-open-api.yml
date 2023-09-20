@@ -25,4 +25,4 @@ jobs:
         run: echo ${{ github.event.ref }}
       - name: Delete Open API from S3
         run: |
-          aws s3 delete-object --bucket ${{ secrets.S3_BUCKET_NAME }} --key ${{ github.head_ref }}/index.html
+          aws s3 rm s3://${{ secrets.S3_BUCKET_NAME }}/${{ github.event.ref }}/index.html
