@@ -23,6 +23,6 @@ jobs:
           aws-region: "${{ vars.AWS_REGION }}"
       - name: echo branch name
         run: echo ${{ github.event.ref }}
-      # - name: Delete Open API from S3
-      #   run: |
-      #     aws s3 cp ./dist/index.html s3://${{ secrets.S3_BUCKET_NAME }}/${{ github.head_ref }}/index.html
+      - name: Delete Open API from S3
+        run: |
+          aws s3 delete-object --bucket ${{ secrets.S3_BUCKET_NAME } --key /${{ github.head_ref }}/index.html
