@@ -38,7 +38,7 @@ components:
           example: 80eee574-d798-a7b7-2292-855fa19e8fc5
         name:
           type: string
-          description: User name
+          description: User Name
           example: John Doe
         email:
           type: string
