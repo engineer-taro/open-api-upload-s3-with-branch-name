@@ -1,4 +1,4 @@
-name: Upload Open API to S3 with branch name
+name: Upload Open API to S3
 on:
   workflow_dispatch:
   push:
