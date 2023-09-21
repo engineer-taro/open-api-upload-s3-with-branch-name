@@ -11,7 +11,7 @@ paths:
     get:
       tags:
         - users
-      description: User情報を取得する
+      description: User情報を取得
       parameters:
         - name: id
           in: path
