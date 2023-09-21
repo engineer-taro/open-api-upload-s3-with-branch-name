@@ -1,21 +1,25 @@
-branch ごとに S3 の別ディレクトリに対して html の OpenAPI 定義をデプロイする
+# プルリク時、ブランチ名のディレクトリに OpenAPI 定義書をアップロードして簡単にレビューできるようにする
 
-## 進捗
+## 概要
 
-- CloudFront の CSP で弾かれている
+### これは何？
 
-  - https://developer.mozilla.org/en-US/docs/Web/HTTP/CSP (まだ見てない)
-  - js の import は redoc から撮ってきた JS を配置すれば防げる
-  - Google font は変えられないっけ？
-  - CSS のスタイルはめんどくさそうなので、CloudFront の設定を変えたい
+- プルリク作成時に S3 に `<ブランチ名のディレクトリ>/index.html` に OpenAPI 定義書の HTML を配置し、CloudFront 経由で簡単に確認できる
 
-- GitHub Actions からのデプロイ
-- ブランチ名をディレクトリ名にする
+### 構成
 
-- Branch 名を GitHub Actions で撮ってくる
-- Branch 名のエスケープを行う # マストではない
+- CloudFront, S3 の構成
+  - S3 のみで静的ウェブサイトホスティングでも良いが、Basic 認証をかけることが出来なそうなので、CloudFront & S3 の構成にした
+  - 今回は Basic 認証まで実装していないが、実運用では掛けることになりそう
+- GitHub Actions
+  - プルリク作成時、`designディレクトリ` に変更があった場合、S3 の`<ブランチ名のディレクトリ>/index.html` パスに定義書をアップロード
+  - ブランチ削除時、S3 の`<ブランチ名のディレクトリ>/index.html` のオブジェクトを削除する
+- 利用ライブラリ
 
-- design 配下に差分がある時のみワークフローを実行する
+  - cdk: インフラ作成に利用
+  - redoc-cli: OpenAPI 定義 -> html の変換に利用
 
-- プルリクエストにパスをコメントする
-- ブランチ削除時に該当ファイルを削除する
+  ## 今後の展望
+
+- CloudFront への Basic 認証は作っておいて良さそう
+- dependabot で cdk のバージョンアップとスナップショットテスト自動化を試してみたい

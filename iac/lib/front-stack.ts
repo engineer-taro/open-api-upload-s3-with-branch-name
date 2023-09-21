@@ -12,6 +12,7 @@ export class FrontStack extends cdk.Stack {
   constructor(scope: Construct, id: string, props: FrontStackProps) {
     super(scope, id, props);
 
+    // NOTE: 試験的に@aws-solutions-constructsを利用してみたが、内部の構成が分からなくなるので、このくらい単純な作りなら使わなくて良さそう
     const cloudFrontAndS3 = new CloudFrontToS3(this, "CloudFrontToS3", {
       bucketProps: {
         removalPolicy: cdk.RemovalPolicy.DESTROY,
@@ -25,7 +26,7 @@ export class FrontStack extends cdk.Stack {
       insertHttpSecurityHeaders: false,
     });
 
-    // NOTE: regionにつき1つのみ作成可能
+    // NOTE: regionにつき1つで良いため、CDKではなく手動で作った方が良いかも
     const openIdConnectProvider = new aws_iam.OpenIdConnectProvider(
       this,
       "OpenIdConnectProvider",
