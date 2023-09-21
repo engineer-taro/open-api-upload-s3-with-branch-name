@@ -1,6 +1,5 @@
 name: Upload Open API to S3 with branch name
 on:
-  workflow_dispatch:
   pull_request_target:
     branches:
       - main
