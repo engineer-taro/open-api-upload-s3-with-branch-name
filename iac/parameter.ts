@@ -3,5 +3,5 @@ export interface FrontParameter {
 }
 
 export const devParameter: FrontParameter = {
-  gitHubOrg: "engineer-taro", // TODO: あとで変更する
+  gitHubOrg: "YOUR_GITHUB_ORG",
 };
