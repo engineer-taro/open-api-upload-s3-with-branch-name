@@ -22,7 +22,7 @@
   - cdk: インフラ作成に利用
   - redoc-cli: OpenAPI 定義 -> html の変換に利用
 
-  ## 今後の展望
+## 今後の展望
 
 - CloudFront への Basic 認証は作っておいて良さそう
 - dependabot で cdk のバージョンアップとスナップショットテスト自動化を試してみたい
