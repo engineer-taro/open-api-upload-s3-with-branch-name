@@ -1,6 +1,6 @@
 ## 注意点
 
-- 利用する際は `.github/workflows-bk` を `.github/workflows` に変更する。
+- 利用する際は `.github/workflows-prefix` を `.github/workflows` に変更する。
   - ※ パブリックリポジトリで誰でもプルリクを作れば GitHub Actions を動かせてしまうため、このようにしている
 
 ## 概要
