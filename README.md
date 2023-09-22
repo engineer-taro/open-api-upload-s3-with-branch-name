@@ -1,5 +1,3 @@
-# プルリク時、ブランチ名のディレクトリに OpenAPI 定義書をアップロードして簡単にレビューできるようにする
-
 ## 注意点
 
 - 利用する際は `.github/workflows-bk` を `.github/workflows` に変更する。
