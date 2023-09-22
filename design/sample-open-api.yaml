@@ -27,6 +27,20 @@ paths:
             application/json:
               schema:
                 $ref: "#/components/schemas/User"
+  /users:
+    get:
+      tags:
+        - users
+      description: User情報の一覧を取得
+      responses:
+        "200":
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: "#/components/schemas/User"
 components:
   schemas:
     User:
