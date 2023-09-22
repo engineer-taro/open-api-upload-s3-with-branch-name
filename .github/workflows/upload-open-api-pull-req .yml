@@ -16,7 +16,9 @@ jobs:
       run:
         working-directory: ./design
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.head_ref }}
       - uses: actions/setup-node@v3
         with:
           node-version: 20
